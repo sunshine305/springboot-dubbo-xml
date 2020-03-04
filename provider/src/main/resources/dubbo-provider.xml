@@ -14,14 +14,16 @@
         <dubbo:parameter key="qos.port" value="55555"/>
     </dubbo:application>
     <!-- 使用zookeeper做为注册中心 -->
-    <dubbo:registry  protocol="zookeeper" address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181"/>
 
     <!--当前服务发布所依赖的协议；webserovice、Thrift、Hessain、http-->
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!--服务发布的配置，需要暴露的服务接口-->
     <bean id="demoService" class="com.unifs.provider.impl.DemoServiceImpl"/>
+    <bean id="userService" class="com.unifs.provider.impl.UserServiceImpl"/>
 
     <!--Bean bean定义-->
     <dubbo:service interface="com.unifs.api.service.DemoService" ref="demoService"/>
+    <dubbo:service interface="com.unifs.api.service.UserService" ref="userService"/>
 </beans>

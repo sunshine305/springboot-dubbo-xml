@@ -16,4 +16,5 @@
     <!--生成一个远程服务的调用代理-->
     <!--点对点方式-->
     <dubbo:reference id="demoService" check="false" interface="com.unifs.api.service.DemoService"/>
+    <dubbo:reference id="userService" check="false" interface="com.unifs.api.service.UserService"/>
 </beans>
